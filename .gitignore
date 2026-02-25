@@ -1,4 +1,4 @@
 .plan/
 test/
 coverage.out
-alive
+/alive
