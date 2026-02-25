@@ -20,19 +20,19 @@
 
 > examples?
 
- go run ./src check https://example.com
- go run ./src file targets.txt 2000
- go run ./src serve 4177 2500
+ go run ./cmd/alive check https://example.com
+ go run ./cmd/alive file targets.txt 2000
+ go run ./cmd/alive serve 4177 2500
  curl "http://127.0.0.1:4177/check?url=https://example.com&url=https://go.dev"
 
 > stack?
 
- go 1.25 stdlib
+ go 1.26 stdlib
 
 > run?
 
- go run ./src check https://example.com
- go run ./src serve 4177
+ go run ./cmd/alive check https://example.com
+ go run ./cmd/alive serve 4177
 
 > test?
 
@@ -41,14 +41,13 @@
 > proof?
 
  $ go test ./...
- ? github.com/keypad/alive/src [no test files]
- ok github.com/keypad/alive/test 0.805s
+ ? github.com/keypad/alive/cmd/alive [no test files]
 
- $ go run ./src check https://example.com 2500
+ $ go run ./cmd/alive check https://example.com 2500
  target state code latency size note
  https://example.com up 200 50ms - -
 
- $ curl "http://127.0.0.1:4180/check?url=https://example.com&url=https://go.dev"
+ $ curl "http://127.0.0.1:4177/check?url=https://example.com&url=https://go.dev"
  target state code latency size note
  https://example.com up 200 38ms - -
  https://go.dev up 200 208ms - -
